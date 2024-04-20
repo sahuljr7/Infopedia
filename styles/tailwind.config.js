@@ -26,6 +26,15 @@ module.exports = {
         DEFAULT: {
           css: {
             maxWidth: '100%',
+             h1: {
+          fontFamily: 'times',
+        },
+        h2: {
+          fontFamily: 'times',
+        },
+        h3: {
+          fontFamily: 'times',
+        },
             a: {
               color: '#1D4ED8',
               '&:hover': {
