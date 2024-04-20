@@ -1,4 +1,5 @@
 const autoprefixer = require('autoprefixer');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   important: true,
