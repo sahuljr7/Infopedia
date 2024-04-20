@@ -1,141 +1,32 @@
 ---
-title: Getting started
+title: About Infopedia
 date: Last Modified 
 permalink: /
 eleventyNavigation:
-  key: Getting started 
-  title: Getting started
+  key: About Infopedia
+  title: About Infopedia
   order: 0
 ---
-Create your own spacebook exactly like this one and customize it to your needs. Spacebooks are speedy to set up, free, and 100% open source.
 
-- **Easy to use** 😀 -- add a new page and it appears magically in your navigation, make edits right from your phone
-- **Writing focused** ❤️ -- beautiful typography and a minimalist design managed with easy-to-use Markdown
-- **Speedy and accessible** 🚀 -- static files, responsive system fonts, minimal JavaScript, purge and minify All the Things, accessible to all people and devices
-- **Privacy first** 🔒 -- User-agent: \* Disallow: / is set by default with noreferrer set on all links; encrypt your full site with a password if desired
-- **Flexible** 💪 -- horizontal or vertical navigation, disable features you don't need, add advanced features with serverless functions or Alpine.js
+# About Infopedia
 
-Spacebooks are modern notebooks you can use to create documentation, sketch out new ideas, plan a new project, or whatever suits your fancy. 
+Welcome to Infopedia, your go-to destination for knowledge and information on a wide range of topics! Infopedia is a clone of Wikipedia, designed to provide users with accurate, reliable, and up-to-date information on various subjects.
 
----
+## Our Mission
 
-## Quick launch 👩🏽‍🚀
+At Infopedia, our mission is to democratize knowledge by making it freely accessible to everyone. We believe that access to information is essential for personal growth, education, and understanding of the world around us. By creating a platform where users can contribute and collaborate to build a repository of knowledge, we aim to empower individuals to explore, learn, and share information in a meaningful way.
 
-If you're the adventurous type, you can launch your own spacebook right now with the click of a button. You'll need an existing [Github account](https://github.com/), and a [Netlify account](https://www.netlify.com/) (which you can create during this process if you wish): 
+## What We Offer
 
-<div class="flex width-full justify-center">
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/broeker/spacebook"><img class="button" width="146px" height="32px" height="auto" src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-</div>
+Infopedia offers a vast collection of articles covering diverse topics such as history, science, technology, arts, culture, and more. Our content is curated and written by a community of volunteers who are passionate about sharing their expertise and knowledge with the world. Whether you're a student, researcher, or simply curious about a particular subject, you'll find valuable and comprehensive information on Infopedia.
 
-If you click that button and follow the steps, the Netlify robots will copy the spacebook repository to your own personal Github account. Once complete, your new spacebook will be automatically deployed to the cloud with its own URL and ready for customization. 👍
+## How You Can Contribute
 
---- 
+Infopedia thrives on community collaboration and contributions. If you have expertise in a specific field or are passionate about a particular topic, we encourage you to join our community of contributors. You can help improve existing articles, create new content, or participate in discussions to ensure the accuracy and quality of information on Infopedia. Together, we can continue to build a valuable resource for generations to come.
 
-::: callout-blue
-**Did you know?** You can host your project anywhere, but we currently assume [Netlify](https://www.netlify.com/), and various features may be Netlify dependent (e.g. contact forms, Netlify Identity).  They provide a generous free tier, and are pioneers in a new breed of web hosting that makes it simple to push some files to a speedy, global CDN that will serve your files faster than you can blink.
-:::
+## Get Involved
 
----
+Ready to explore the world of knowledge? Start browsing Infopedia today and embark on a journey of discovery. Whether you're here to learn, contribute, or simply satisfy your curiosity, we're excited to have you as part of our community.
 
-## What is a spacebook? 
+Thank you for choosing Infopedia as your trusted source of information. Happy reading!
 
-A spacebook is a simple website generator that will help you create your own project just like this one using a bunch of cool, modern, and fast technology:
-
-- [Eleventy](https://www.11ty.io) a super fast Node-based static site generator that stays out of your way and lets you ship only what you want to ship 🚀
-- [Tailwind 2.0](https://tailwindcss.com/) a brilliant and tiny utility-first CSS framework 🎨
-- [Alpine.js](https://github.com/alpinejs/alpine) a minimal utility-first framework for simple or advanced JavaScript 🕹️
-- [Elasticlunr](http://elasticlunr.com/) a lightweight full-text search engine 🔍
-- [Advanced Markdown-it support](https://github.com/markdown-it/markdown-it) with footnotes, custom containers, emoji support, tables, task lists, and auto-linked images ✏️
-- [Netlify CMS](https://www.netlify.com/) *(optional)* to provide an easy Markdown editor for creating and changing content. 💻
-
-Never fear! You don't need to know or understand any of this to launch a spacebook, but it results in a speedy, easy-to-use, and accessible website that typically scores 100s across the board on Google Lighthouse metrics for mobile and desktop.
-
-::: callout
-**Did you know?** If you wish, you may customize the design of your spacebook, or even use it as the basis for your creating your own starter. It was built on the [shoulders of giants](/credits). 👍
-:::
-
-## Features
-
-Almost all features are optional, and can be toggled in your configuration file:
-
-* Horizontal or vertical navigation
-* In-page navigation
-* Keyword search
-* Dark mode
-* Datestamp
-* Edit on Github
-* Contact form
-* Netlify CMS
-
----
-
-## Who needs a spacebook?
-
-A spacebook is for anybody who believes in the [#indieweb](https://indieweb.org/) and wants a simple, modern, and free way to put a notebook-like thing on the web that they own and control:
-
-- Writers and thinkers
-- Planners and dreamers
-- Technical doc writers
-- Project managers
-- Teachers and students
-
-Anyone who is willing to learn a few simple things can create as many spacebooks as they'd like for any reason in the world.
-
----
-
-## Installing spacebook
-
-In theory, you can launch a spacebook without ever downloading the code or running your site locally. Just click the green Netlify button above and edit your files directly on Github! (The Github UI is fairly mobile friendly, and it is entirely possible to launch and manage a spacebook entirely via your phone :)) But if you want to customize your codebase or write your Markdown files in a local editor, you'll want to download and install your site locally.
-
-### Requirements
-
-You must be running **Node version 12 or higher** due to the Tailwind 2.0 release. I recommend using NVM to easily manage your Node versions if you need to switch back and forth between older versions.
-
-- [Node](https://nodejs.org/)
-- [NVM](https://github.com/nvm-sh/nvm) (optional)
-
-**To find your current node version:**
-
-```
-node --version
-```
-
-### Step one
-
-If already have a Github repository from an automated Netlify install, simply clone a copy of your repository:
-
-```
-git clone https://github.com/<your-username>/<your-repository>
-```
-
-If you just want to try this out locally, you can clone the Spacebook repository directly:
-
-```
-git clone https://github.com/broeker/spacebook
-```
-
-_Note: If you choose the second option, you'll need to remove the existing .git folder and add your own upstream repository if you want to use this as a basis for moving forward. You can also simply copy or [fork the repository](https://github.com/broeker/spacebook) directly from Github._
-
-### Step two
-
-Install the site and run an initial build command:
-
-```
-cd spacebook
-
-npm install
-
-npm run build (only necessary the first time!)
-```
-
-_If you get errors here, double check your node version_
-
-### Step three
-
-Now spin up your local server to see your site:
-
-```
-npm run start
-```
-
-This command will start a local server and you'll be able to work on your site with hot reloads and some nice Browsersync features. If you install your site locally without connecting it to Netlify, you can easily do so later by moving your code into its own Github repository, and then creating a new Netlify site connected to that repository. 💥
