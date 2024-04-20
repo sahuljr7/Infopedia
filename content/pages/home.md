@@ -1,5 +1,5 @@
 ---
-title: About Infopedia
+title: Infopedia
 date: Last Modified 
 permalink: /
 eleventyNavigation:
