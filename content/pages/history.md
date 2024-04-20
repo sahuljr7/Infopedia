@@ -10,8 +10,6 @@ eleventyNavigation:
   title: 'History'
 ---
 
-# History
-
 Welcome to the history section of Infopedia! Here, we delve into the fascinating tapestry of human civilization, exploring the events, people, and cultures that have shaped our world over millennia.
 
 ## Overview
@@ -40,5 +38,3 @@ Studying history is essential for understanding the complexities of human behavi
 Ready to dive into the rich tapestry of human history? Browse our collection of articles, explore different time periods and civilizations, and uncover the fascinating stories that have shaped our world. Whether you're a history enthusiast, a student, or simply curious about the past, Infopedia's history section has something for everyone.
 
 Happy exploring!
-
----
