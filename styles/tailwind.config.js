@@ -20,7 +20,7 @@ module.exports = {
     },
      fontFamily: {
         'times': ['Times New Roman', 'serif'],
-      }
+      },
     extend: {
       typography: {
         DEFAULT: {
