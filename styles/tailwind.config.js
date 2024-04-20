@@ -21,7 +21,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'times': ['Times New Roman', 'serif'],
-      }
+      },
       typography: {
         DEFAULT: {
           css: {
