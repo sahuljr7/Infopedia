@@ -1,7 +1,7 @@
 ---
 title: 'Literature' 
 date: 2024-04-20
-permalink: /getting-started/deploy/index.html
+permalink: /getting-started/literature/index.html
 eleventyNavigation:
   order: 20 
   parent: Getting started 
