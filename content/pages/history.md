@@ -1,13 +1,11 @@
 ---
 title: 'History' 
-date: Last Modified 
+date: 2024-04-20
 permalink: /getting-started/history/index.html
-toc: true
 eleventyNavigation:
   order: 5 
-  parent: Infopedia 
+  parent: Getting started
   key: History
-  title: 'History'
 ---
 
 Welcome to the history section of Infopedia! Here, we delve into the fascinating tapestry of human civilization, exploring the events, people, and cultures that have shaped our world over millennia.
