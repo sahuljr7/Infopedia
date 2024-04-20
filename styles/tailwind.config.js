@@ -16,10 +16,6 @@ module.exports = {
     },
   },
   darkMode: 'class',
-  theme: {
-    container: {
-      center: true,
-    },
     extend: {
      lineHeight: {
         11: '2.75rem',
