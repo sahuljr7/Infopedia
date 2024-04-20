@@ -1,11 +1,10 @@
 ---
 title: 'Geography' 
-date: Last Modified
+date: 2024-04-20
 permalink: /getting-started/geography/index.html
-toc: true
 eleventyNavigation:
   order: 10
-  parent: Infopedia 
+  parent: Getting started 
   key: Geography
 ---
 
