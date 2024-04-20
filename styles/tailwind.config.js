@@ -19,8 +19,8 @@ module.exports = {
       center: true,
     },
      fontFamily: {
-        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
-      },
+        'times': ['Times New Roman', 'serif'],
+      }
     extend: {
       typography: {
         DEFAULT: {
