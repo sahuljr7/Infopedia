@@ -18,6 +18,9 @@ module.exports = {
     container: {
       center: true,
     },
+     fontFamily: {
+        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+      },
     extend: {
       typography: {
         DEFAULT: {
