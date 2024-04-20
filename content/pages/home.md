@@ -1,10 +1,10 @@
 ---
-title: Infopedia
+title: Getting started
 date: Last Modified 
 permalink: /
 eleventyNavigation:
-  key: About Infopedia
-  title: Infopedia
+  key: Getting started 
+  title: Getting started
   order: 0
 ---
 
