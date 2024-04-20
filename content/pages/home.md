@@ -4,9 +4,11 @@ date: Last Modified
 permalink: /
 eleventyNavigation:
   key: About Infopedia
-  title: About Infopedia
+  title: Infopedia
   order: 0
 ---
+
+Infopedia is your online encyclopedia, a treasure trove of knowledge on a vast array of topics. With its roots inspired by Wikipedia, Infopedia aims to provide users with accurate, reliable, and accessible information on subjects spanning from history to science, arts to technology, and beyond. Our platform thrives on community collaboration, where passionate contributors from around the globe come together to curate, create, and refine content. Whether you're a curious learner, a seasoned researcher, or an avid explorer of information, Infopedia welcomes you to embark on a journey of discovery and enlightenment. Join us in our mission to democratize knowledge, empowering individuals to explore, learn, and share in the ever-expanding realm of human understanding.
 
 # About Infopedia
 
