@@ -1,4 +1,6 @@
 const autoprefixer = require('autoprefixer');
+const { fontFamily } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   important: true,
@@ -18,45 +20,59 @@ module.exports = {
     container: {
       center: true,
     },
-     fontFamily: {
-        'times': ['Times New Roman', 'serif'],
-      },
     extend: {
-      typography: {
+     lineHeight: {
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
+      },
+      fontFamily: {
+        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+      },
+      colors: {
+        primary: colors.green,
+        gray: colors.gray,
+      },
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
-            maxWidth: '100%',
             a: {
-              color: '#1D4ED8',
+              color: theme('colors.primary.500'),
               '&:hover': {
-              color: '#1E3A8A',
+                color: `${theme('colors.primary.600')}`,
               },
+              code: { color: theme('colors.primary.400') },
             },
-            '.prose a.edit, .tag a': {
-              color: '#333',
-              'text-decoration': 'none',
+            'h1,h2': {
+              fontWeight: '700',
+              letterSpacing: theme('letterSpacing.tight'),
             },
-            'ul.footer-nav': {
-              '::before': {
-                display: 'none',
-                'text-decoration': 'none',
-              }
+            h3: {
+              fontWeight: '600',
             },
-            'ul.contains-task-list': {
-              '::before': {
-                display: 'none',
-              }
-            },
-            'ul.spacelog': {
-              '::before': {
-                display: 'none',
-              }
+            code: {
+              color: theme('colors.indigo.500'),
             },
           },
         },
-      }
+        invert: {
+          css: {
+            a: {
+              color: theme('colors.primary.500'),
+              '&:hover': {
+                color: `${theme('colors.primary.400')}`,
+              },
+              code: { color: theme('colors.primary.400') },
+            },
+            'h1,h2,h3,h4,h5,h6': {
+              color: theme('colors.gray.100'),
+            },
+          },
+        },
+      }),
     },
-  }, 
+  },
   variants: {},
   plugins: [
     require('@tailwindcss/typography'),
