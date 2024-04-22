@@ -20,35 +20,35 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'times': ['Times New Roman', 'serif'],
+        sans: ['var(--font-space-grotesk)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
       },
       typography: {
         DEFAULT: {
           css: {
             maxWidth: '100%',
-             h1: {
-          fontFamily: 'times',
-        },
-        h2: {
-          fontFamily: 'times',
-        },
-        h3: {
-          fontFamily: 'times',
-        },
-            a: {
+            'h1': {
+              fontFamily: 'var(--font-space-grotesk)',
+            },
+            'h2': {
+              fontFamily: 'var(--font-space-grotesk)',
+            },
+            'h3': {
+              fontFamily: 'var(--font-space-grotesk)',
+            },
+            'a': {
               color: '#1D4ED8',
               '&:hover': {
-              color: '#1E3A8A',
+                color: '#1E3A8A',
               },
             },
             '.prose a.edit, .tag a': {
               color: '#333',
-              'text-decoration': 'none',
+              textDecoration: 'none',
             },
             'ul.footer-nav': {
               '::before': {
                 display: 'none',
-                'text-decoration': 'none',
+                textDecoration: 'none',
               }
             },
             'ul.contains-task-list': {
@@ -63,7 +63,7 @@ module.exports = {
             },
           },
         },
-      }
+      },
     },
   }, 
   variants: {},
