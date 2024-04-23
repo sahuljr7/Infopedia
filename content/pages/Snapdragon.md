@@ -33,3 +33,25 @@ Snapdragon is a brand of system-on-chip (SoC) semiconductor products developed b
 
 Overall, Snapdragon SoCs are known for their performance, efficiency, and feature-rich capabilities, making them a popular choice among manufacturers for powering a wide range of mobile devices.
 
+- **Snapdragon** is a suite of system on a chip (SoC) semiconductor products for mobile devices designed and marketed by Qualcomm Technologies Inc.
+
+- The Snapdragon's central processing unit (CPU) uses the **ARM architecture**.
+
+- Qualcomm often refers to the Snapdragon as a **"mobile platform"**.
+
+- Snapdragon semiconductors are embedded in devices of various systems, including **vehicles, Android, Windows Phone and netbooks**.
+
+- In addition to processors, the Snapdragon line includes **modems, Wi-Fi chips and mobile charging products**.
+
+- **Snapdragon QSD8250 was released in December 2007** and included the first 1 GHz processor for mobile phones.
+
+- Qualcomm introduced its **"Krait" microarchitecture in 2011**, allowing each processor core to adjust its speed based on device needs.
+
+- At CES 2013, Qualcomm introduced the **Snapdragon 800 series** and renamed prior models as the 200, 400 and 600 series.
+
+- Several new iterations were introduced later, such as the **Snapdragon 805, 810, 615 and 410**.
+
+- In February 2015, Qualcomm **re-branded its modem products under the Snapdragon name**.
+
+- **As of 2018, Asus, HP and Lenovo began selling laptops with Snapdragon-based CPUs running Windows 10**, marking an entry into the PC market for Qualcomm and ARM architecture.
+
