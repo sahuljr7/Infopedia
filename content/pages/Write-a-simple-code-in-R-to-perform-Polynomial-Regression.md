@@ -38,10 +38,10 @@ ggplot() +
 
 In this code:
 
-1. We generate sample data where `x` is a sequence of numbers from -3 to 3, and `y` is calculated using a quadratic polynomial equation with some added noise.
+1. We generate sample data where x is a sequence of numbers from -3 to 3, and y is calculated using a quadratic polynomial equation with some added noise.
 
-2. We perform polynomial regression using the `lm()` function. The `poly()` function is used to create polynomial terms for the independent variable `x`. Setting `raw = TRUE` ensures that the polynomial terms are orthogonalized.
+2. We perform polynomial regression using the lm() function. The poly() function is used to create polynomial terms for the independent variable x. Setting raw = TRUE ensures that the polynomial terms are orthogonalized.
 
-3. We make predictions for `y` using the polynomial regression model for a sequence of `x` values (`x_pred`).
+3. We make predictions for y using the polynomial regression model for a sequence of x values (x_pred).
 
-4. Finally, we plot the original data points and the regression curve using `ggplot2`. The `geom_point()` function adds the data points, while `geom_line()` adds the regression curve.
+4. Finally, we plot the original data points and the regression curve using ggplot2. The geom_point() function adds the data points, while geom_line() adds the regression curve.
