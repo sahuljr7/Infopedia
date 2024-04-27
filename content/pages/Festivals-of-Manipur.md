@@ -5,7 +5,7 @@ permalink: /india-states/Manipur/Festivals-of-Manipur/index.html
 eleventyNavigation:
   key: Festivals of Manipur
   order: 27
-  parent: Manipur
+  parent: States of India
 ---
 
 Here are some of the major festivals celebrated in Manipur:
