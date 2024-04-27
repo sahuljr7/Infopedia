@@ -1,7 +1,7 @@
 ---
 title: Arunachal Pradesh
 date: 2024-04-27
-permalink: /india-states/meghalaya/index.html
+permalink: /india-states/Arunachal-Pradesh/index.html
 eleventyNavigation:
   key: Arunachal Pradesh
   order: 27
