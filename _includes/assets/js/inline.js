@@ -42,22 +42,78 @@ function closeNavigation() {
 }
 
 function toggleSearch() {
-  const searchField = document.getElementById("searchField");
-  const searchToggle = document.getElementById("searchToggle");
-  if (!searchField || !searchToggle) return;
-
-  const isOpening = searchField.classList.contains("hidden");
-  searchField.classList.toggle("hidden", !isOpening);
-  searchToggle.setAttribute("aria-expanded", String(isOpening));
-  if (isOpening) {
-    searchField.focus();
+  const overlay = document.getElementById("searchOverlay");
+  if (!overlay) return;
+  if (overlay.classList.contains("hidden")) {
+    openSearch();
   } else {
-    const searchResults = document.getElementById("searchResults");
-    const noResultsFound = document.getElementById("noResultsFound");
-    if (searchResults) searchResults.classList.add("hidden");
-    if (noResultsFound) noResultsFound.classList.add("hidden");
+    closeSearch();
   }
 }
+
+function openSearch() {
+  const overlay = document.getElementById("searchOverlay");
+  const searchField = document.getElementById("searchField");
+  if (!overlay || !searchField) return;
+
+  overlay.classList.remove("hidden");
+  overlay.setAttribute("aria-hidden", "false");
+  const searchToggle = document.getElementById("searchToggle");
+  if (searchToggle) searchToggle.setAttribute("aria-expanded", "true");
+  document.body.classList.add("search-open");
+  searchField.focus();
+}
+
+function closeSearch(event) {
+  const overlay = document.getElementById("searchOverlay");
+  if (!overlay || (event && event.target !== overlay)) return;
+
+  overlay.classList.add("hidden");
+  overlay.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("search-open");
+  const searchToggle = document.getElementById("searchToggle");
+  if (searchToggle) {
+    searchToggle.setAttribute("aria-expanded", "false");
+    searchToggle.focus();
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  const overlay = document.getElementById("searchOverlay");
+  const isOpen = overlay && !overlay.classList.contains("hidden");
+  const target = event.target;
+  const isTyping = target && (target.matches("input, textarea, select") || target.isContentEditable);
+
+  if (event.key === "Escape" && isOpen) {
+    event.preventDefault();
+    closeSearch();
+    return;
+  }
+
+  if (event.key === "Tab" && isOpen) {
+    const focusable = overlay.querySelectorAll("input, button, a[href]");
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
+  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+    event.preventDefault();
+    if (!isOpen) openSearch();
+    return;
+  }
+
+  if (event.key === "/" && !isTyping && !isOpen) {
+    event.preventDefault();
+    openSearch();
+  }
+});
 
 function activateDarkMode() {
   if (localStorage.getItem('darkmode') === 'true') {

@@ -9,14 +9,14 @@ layout: layouts/base.njk
 
   <section id="articles" class="article-feed" aria-label="Latest articles">
     {% for article in collections.menuItems %}
-      {% if article.url != page.url %}
+      {% if article.url != page.url and article.data.topics %}
       <article id="article-{{ article.data.title | slug }}" class="feed-item">
         <time class="feed-item__date" datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
         <div class="feed-item__body">
           <h2><a href="{{ article.url | url }}">{{ article.data.title }}</a></h2>
           {% if article.data.topics %}
           <ul class="topic-tags" aria-label="Topics">
-            {% for topic in article.data.topics %}<li>{{ topic }}</li>{% endfor %}
+            {% for topic in article.data.topics %}<li><a href="/tags/{{ topic | slug }}/">{{ topic }}</a></li>{% endfor %}
           </ul>
           {% endif %}
           <p class="feed-item__description">{{ article.data.description }}</p>
@@ -30,13 +30,15 @@ layout: layouts/base.njk
   <section id="topics" class="topic-index" aria-labelledby="topics-title">
     <h2 id="topics-title">Browse topics</h2>
     <div class="topic-index__links">
-      <a href="#article-hibu">Digital marketing</a>
-      <a href="#article-yext">AI &amp; search</a>
-      <a href="#article-yelp">Local reviews</a>
+      {% for topic in collections.topicTags %}
+      <a href="/tags/{{ topic.slug }}/">{{ topic.name }} <span>{{ topic.count }}</span></a>
+      {% endfor %}
     </div>
   </section>
 
   <section id="about" class="home-about" aria-label="About this knowledge hub">
-    <div class="prose prose-lg">{{ layoutContent | safe }}</div>
+    <h2>About Infopedia</h2>
+    <p>A collaborative place to explore technology, industries, and innovation through clear explanations and source-linked profiles.</p>
+    <a class="feed-item__link" href="/about/">Learn about Infopedia <span aria-hidden="true">→</span></a>
   </section>
 </div>

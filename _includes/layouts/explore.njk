@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+<div class="home-shell route-shell">
+  <header class="route-heading">
+    <h1>Explore</h1>
+    <p>Browse all company profiles and explainers, or narrow the list by topic.</p>
+  </header>
+  <section class="article-feed" aria-label="All articles">
+    {% for article in collections.menuItems %}
+      {% if article.data.topics %}
+      <article id="article-{{ article.data.title | slug }}" class="feed-item">
+        <time class="feed-item__date" datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
+        <div class="feed-item__body">
+          <h2><a href="{{ article.url | url }}">{{ article.data.title }}</a></h2>
+          <ul class="topic-tags" aria-label="Topics">
+            {% for topic in article.data.topics %}<li><a href="/tags/{{ topic | slug }}/">{{ topic }}</a></li>{% endfor %}
+          </ul>
+          <p class="feed-item__description">{{ article.data.description }}</p>
+          <a class="feed-item__link" href="{{ article.url | url }}">Read more <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+</div>

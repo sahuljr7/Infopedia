@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+<div class="home-shell route-shell">
+  <header class="route-heading">
+    <a class="back-link" href="/tags/">← All tags</a>
+    <h1>{{ topic.name }}</h1>
+    <p>{{ topic.count }} {% if topic.count == 1 %}article{% else %}articles{% endif %} tagged {{ topic.name }}.</p>
+  </header>
+  <section class="article-feed" aria-label="Articles tagged {{ topic.name }}">
+    {% for article in topic.articles %}
+    <article class="feed-item">
+      <time class="feed-item__date" datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
+      <div class="feed-item__body">
+        <h2><a href="{{ article.url | url }}">{{ article.title }}</a></h2>
+        <p class="feed-item__description">{{ article.description }}</p>
+        <a class="feed-item__link" href="{{ article.url | url }}">Read more <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+</div>

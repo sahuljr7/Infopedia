@@ -8,22 +8,16 @@
     </a>
 
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="/#articles">Explore</a>
-      <a href="/#topics">Tags</a>
-      <a href="/#about">About</a>
+      <a href="/explore/">Explore</a>
+      <a href="/tags/">Tags</a>
+      <a href="/about/">About</a>
     </nav>
 
     <div class="site-controls">
       {% if site.enableSearch == 1 %}
-      <form class="search-control" role="search" onsubmit="return false">
-        <button id="searchToggle" class="icon-button" type="button" aria-label="Search" aria-expanded="false" onclick="toggleSearch()">
+      <button id="searchToggle" class="icon-button" type="button" aria-label="Search (Ctrl+K)" aria-haspopup="dialog" onclick="toggleSearch()">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
-        </button>
-        <label class="sr-only" for="searchField">Search Infopedia</label>
-        <input id="searchField" class="search-field hidden" type="search" placeholder="Search articles" autocomplete="off">
-        <ul id="searchResults" class="search-results hidden" tabindex="0"></ul>
-        <div id="noResultsFound" class="search-empty hidden">No results found.</div>
-      </form>
+      </button>
       {% endif %}
 
       {% if site.enableDarkMode == 1 %}
@@ -34,3 +28,19 @@
     </div>
   </div>
 </header>
+
+{% if site.enableSearch == 1 %}
+<div id="searchOverlay" class="search-overlay hidden" aria-hidden="true" onclick="closeSearch(event)">
+  <section class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="searchDialogTitle">
+    <h2 id="searchDialogTitle" class="sr-only">Search Infopedia</h2>
+    <div class="search-dialog__input-wrap">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+      <label class="sr-only" for="searchField">Search articles</label>
+      <input id="searchField" type="search" placeholder="Search articles and topics..." autocomplete="off" aria-controls="searchResults">
+      <button type="button" class="search-close" onclick="closeSearch()" aria-label="Close search">Esc</button>
+    </div>
+    <p id="searchStatus" class="search-status" role="status">Type to search Infopedia</p>
+    <ul id="searchResults" class="search-results" role="listbox" aria-label="Search results"></ul>
+  </section>
+</div>
+{% endif %}

@@ -102,6 +102,36 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("pages/*.md");
    });
 
+   // Build a reusable directory of article topics for the Tags routes.
+   eleventyConfig.addCollection("topicTags", function(collection) {
+    const tags = {};
+    collection.getAll().forEach(function(item) {
+      const topics = item.data.topics;
+      if (!Array.isArray(topics)) return;
+
+      topics.forEach(function(name) {
+        if (!tags[name]) tags[name] = [];
+        tags[name].push({
+          title: item.data.title,
+          url: item.url,
+          description: item.data.description,
+          date: item.date
+        });
+      });
+    });
+
+    return Object.keys(tags).map(function(name) {
+      return {
+        name: name,
+        slug: name.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+        count: tags[name].length,
+        articles: tags[name]
+      };
+    }).sort(function(a, b) {
+      return b.count - a.count || a.name.localeCompare(b.name);
+    });
+   });
+
    // Creates custom collection "posts"
   //  eleventyConfig.addCollection("posts", function(collection) {
   //   const coll = collection.getFilteredByGlob("posts/*.md");
@@ -122,7 +152,7 @@ module.exports = function(eleventyConfig) {
    const searchFilter = require("./filters/searchFilter");
    eleventyConfig.addFilter("search", searchFilter);
    eleventyConfig.addCollection("results", collection => {
-    return [...collection.getFilteredByGlob("**/*.md")];
+    return [...collection.getFilteredByGlob("content/pages/*.md")];
    });
   
    // Creates custom collection "menuItems"

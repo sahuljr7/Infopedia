@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+<div class="home-shell route-shell">
+  <header class="route-heading">
+    <h1>Tags</h1>
+    <p>Browse Infopedia articles by topic.</p>
+  </header>
+  <section class="tag-directory" aria-label="Topics">
+    {% for topic in collections.topicTags %}
+    <a class="tag-directory__item" href="/tags/{{ topic.slug }}/">
+      <span class="tag-directory__name">{{ topic.name }}</span>
+      <span class="tag-directory__count">{{ topic.count }} {% if topic.count == 1 %}article{% else %}articles{% endif %}</span>
+      <span class="tag-directory__arrow" aria-hidden="true">→</span>
+    </a>
+    {% else %}
+    <p>No tags found.</p>
+    {% endfor %}
+  </section>
+</div>
