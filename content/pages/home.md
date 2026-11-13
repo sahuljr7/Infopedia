@@ -1,34 +1,44 @@
 ---
 title: Getting started
-date: Last Modified 
+date: 2026-11-14
 permalink: /
 eleventyNavigation:
-  key: Getting started 
+  key: Getting started
   title: Getting started
   order: 0
 ---
 
-Infopedia is your online encyclopedia, a treasure trove of knowledge on a vast array of topics. With its roots inspired by Wikipedia, Infopedia aims to provide users with accurate, reliable, and accessible information on subjects spanning from history to science, arts to technology, and beyond. Our platform thrives on community collaboration, where passionate contributors from around the globe come together to curate, create, and refine content. Whether you're a curious learner, a seasoned researcher, or an avid explorer of information, Infopedia welcomes you to embark on a journey of discovery and enlightenment. Join us in our mission to democratize knowledge, empowering individuals to explore, learn, and share in the ever-expanding realm of human understanding.
+## Purpose
 
-# About Infopedia
+This space explores the evolving world of technology, industries, and innovation. The goal is to understand how technologies work, how industries use them, what problems they solve, and what developments could shape the future. Topics can include established technologies as well as emerging ideas and products.
 
-Welcome to Infopedia, your go-to destination for knowledge and information on a wide range of topics! Infopedia is a clone of Wikipedia, designed to provide users with accurate, reliable, and up-to-date information on various subjects.
+## Research and learning approach
 
-## Our Mission
+- Prioritize factual, evidence-based information and link to sources.
+- Use real-world examples where they help explain a topic.
+- Distinguish established technology and reported company capabilities from experiments, forecasts, and interpretation.
+- Explore technical and business perspectives, including the problem, the industry, the companies involved, and the business models.
+- Use recent sources for developments that can change, and identify the date of time-sensitive figures.
+- Explain complex ideas in clear language without losing technical accuracy.
 
-At Infopedia, our mission is to democratize knowledge by making it freely accessible to everyone. We believe that access to information is essential for personal growth, education, and understanding of the world around us. By creating a platform where users can contribute and collaborate to build a repository of knowledge, we aim to empower individuals to explore, learn, and share information in a meaningful way.
+## Current company profiles
 
-## What We Offer
+These profiles look at three different parts of local business discovery and digital marketing:
 
-Infopedia offers a vast collection of articles covering diverse topics such as history, science, technology, arts, culture, and more. Our content is curated and written by a community of volunteers who are passionate about sharing their expertise and knowledge with the world. Whether you're a student, researcher, or simply curious about a particular subject, you'll find valuable and comprehensive information on Infopedia.
+- [Hibu](/Hibu/) — a digital marketing services provider for small and medium-sized businesses, with roots in print and online directories.
+- [Yext](/Yext/) — a software platform for managing structured brand and location information across digital channels.
+- [Yelp](/Yelp/) — a consumer platform for discovering local businesses, reading reviews, and connecting with businesses.
 
-## How You Can Contribute
+The companies overlap in areas such as listings, reviews, and local discovery, but they serve different roles. Hibu primarily sells marketing services to businesses; Yext provides software for managing digital presence; Yelp connects consumers and businesses through discovery, reviews, and transactions.
 
-Infopedia thrives on community collaboration and contributions. If you have expertise in a specific field or are passionate about a particular topic, we encourage you to join our community of contributors. You can help improve existing articles, create new content, or participate in discussions to ensure the accuracy and quality of information on Infopedia. Together, we can continue to build a valuable resource for generations to come.
+## Key objectives
 
-## Get Involved
+- Build a broad understanding of technologies and the industries that use them.
+- Discover innovations that address real-world problems.
+- Examine how organizations adopt and commercialize technology.
+- Identify emerging business models and opportunities while separating evidence from speculation.
+- Connect ideas across industries and revisit topics as reliable information changes.
 
-Ready to explore the world of knowledge? Start browsing Infopedia today and embark on a journey of discovery. Whether you're here to learn, contribute, or simply satisfy your curiosity, we're excited to have you as part of our community.
+## Core principle
 
-Thank you for choosing Infopedia as your trusted source of information. Happy reading!
-
+**Explore beyond the technology itself.** Understand the problem, the innovation, the industry it affects, the organizations building it, and the possibilities it creates.
