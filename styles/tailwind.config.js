@@ -1,5 +1,3 @@
-const autoprefixer = require('autoprefixer');
-
 module.exports = {
   important: true,
   future: {
@@ -20,25 +18,44 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        sans: ['"Space Grotesk"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          400: '#34d399',
+          500: '#00a85a',
+          600: '#008a4b',
+          700: '#047857',
+        },
+        accent: {
+          400: '#24c7dc',
+          500: '#12b8d0',
+        },
       },
       typography: {
         DEFAULT: {
           css: {
             maxWidth: '100%',
             'h1': {
-              fontFamily: 'var(--font-space-grotesk)',
+              fontFamily: '"Space Grotesk", system-ui, sans-serif',
+              fontWeight: '700',
+              letterSpacing: '-0.055em',
             },
             'h2': {
-              fontFamily: 'var(--font-space-grotesk)',
+              fontFamily: '"Space Grotesk", system-ui, sans-serif',
+              fontWeight: '700',
+              letterSpacing: '-0.04em',
             },
             'h3': {
-              fontFamily: 'var(--font-space-grotesk)',
+              fontFamily: '"Space Grotesk", system-ui, sans-serif',
             },
             'a': {
-              color: '#1D4ED8',
+              color: '#00a85a',
               '&:hover': {
-                color: '#0F9D58',
+                color: '#008a4b',
               },
             },
             '.prose a.edit, .tag a': {

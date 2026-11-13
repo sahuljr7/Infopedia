@@ -3,6 +3,10 @@ title: Hibu
 date: 2026-11-14
 permalink: /Hibu/index.html
 comments: 0
+description: How Hibu combines websites, advertising, listings, reviews, and marketing services for local businesses.
+topics:
+  - SMALL BUSINESS
+  - DIGITAL MARKETING
 eleventyNavigation:
   key: Hibu
   title: Hibu

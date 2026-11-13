@@ -3,6 +3,10 @@ title: Yelp
 date: 2026-11-14
 permalink: /Yelp/index.html
 comments: 0
+description: How Yelp connects people with local businesses through discovery, reviews, and transactions.
+topics:
+  - LOCAL SEARCH
+  - REVIEWS
 eleventyNavigation:
   key: Yelp
   title: Yelp

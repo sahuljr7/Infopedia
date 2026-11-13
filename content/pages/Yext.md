@@ -3,6 +3,10 @@ title: Yext
 date: 2026-11-14
 permalink: /Yext/index.html
 comments: 0
+description: How Yext organizes brand and location information for listings, search, reviews, and digital discovery.
+topics:
+  - LISTINGS
+  - AI & SEARCH
 eleventyNavigation:
   key: Yext
   title: Yext

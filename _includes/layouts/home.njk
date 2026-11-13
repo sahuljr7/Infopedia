@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+---
+<div class="home-shell">
+  <section class="home-hero" aria-labelledby="home-title">
+    <h1 id="home-title">Latest</h1>
+    <p>Explore clear, source-linked profiles on the companies, platforms, and ideas changing how people find local businesses.</p>
+  </section>
+
+  <section id="articles" class="article-feed" aria-label="Latest articles">
+    {% for article in collections.menuItems %}
+      {% if article.url != page.url %}
+      <article id="article-{{ article.data.title | slug }}" class="feed-item">
+        <time class="feed-item__date" datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
+        <div class="feed-item__body">
+          <h2><a href="{{ article.url | url }}">{{ article.data.title }}</a></h2>
+          {% if article.data.topics %}
+          <ul class="topic-tags" aria-label="Topics">
+            {% for topic in article.data.topics %}<li>{{ topic }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+          <p class="feed-item__description">{{ article.data.description }}</p>
+          <a class="feed-item__link" href="{{ article.url | url }}">Read more <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  <section id="topics" class="topic-index" aria-labelledby="topics-title">
+    <h2 id="topics-title">Browse topics</h2>
+    <div class="topic-index__links">
+      <a href="#article-hibu">Digital marketing</a>
+      <a href="#article-yext">AI &amp; search</a>
+      <a href="#article-yelp">Local reviews</a>
+    </div>
+  </section>
+
+  <section id="about" class="home-about" aria-label="About this knowledge hub">
+    <div class="prose prose-lg">{{ layoutContent | safe }}</div>
+  </section>
+</div>
