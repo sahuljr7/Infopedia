@@ -1,6 +1,7 @@
 (function (window, document) {
   "use strict";
 
+  function initializeSearch() {
   const searchField = document.getElementById("searchField");
   const searchResults = document.getElementById("searchResults");
   const searchStatus = document.getElementById("searchStatus");
@@ -98,8 +99,7 @@
     if (option) selectResult(Array.prototype.indexOf.call(searchResults.children, option));
   });
 
-  window.addEventListener("load", function () {
-    fetch("/search-index.json")
+  fetch("/search-index.json")
       .then(function (response) {
         if (!response.ok) throw new Error("Search index unavailable");
         return response.json();
@@ -112,5 +112,11 @@
       .catch(function () {
         searchStatus.textContent = "Search is temporarily unavailable.";
       });
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeSearch);
+  } else {
+    initializeSearch();
+  }
 })(window, document);
