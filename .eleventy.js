@@ -102,6 +102,18 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("pages/*.md");
    });
 
+   // Content articles are all Markdown pages except the home and about pages.
+   // Sort by date so new or updated articles appear first on Home and Explore.
+   eleventyConfig.addCollection("articles", function(collection) {
+    return collection.getFilteredByGlob("content/pages/*.md")
+      .filter(function(item) {
+        return item.url !== "/" && item.url !== "/about/";
+      })
+      .sort(function(a, b) {
+        return b.date - a.date || a.data.title.localeCompare(b.data.title);
+      });
+   });
+
    // Build a reusable directory of article topics for the Tags routes.
    eleventyConfig.addCollection("topicTags", function(collection) {
     const tags = {};

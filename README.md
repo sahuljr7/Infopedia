@@ -4,8 +4,8 @@ Infopedia is a source-linked knowledge site about technology, industries, and in
 
 ## Site features
 
-- **Home (`/`)** — shows the latest articles, topic links, and a short introduction.
-- **Explore (`/explore/`)** — lists all article pages.
+- **Home (`/`)** — shows all articles newest first, followed by topic links and a short introduction.
+- **Explore (`/explore/`)** — lists three articles per page, with page-number and previous/next links for older articles.
 - **Tags (`/tags/`)** — lists topics and their article counts. Each topic has its own route at `/tags/<topic-slug>/`.
 - **About (`/about/`)** — describes the site's purpose and research principles.
 - **Search** — opens from the search button or with `Ctrl+K` (`Cmd+K` on macOS). Type to search page titles, descriptions, and article content; use the arrow keys and Enter to select a result.
@@ -68,7 +68,7 @@ eleventyNavigation:
 Write the article in Markdown below the front matter. Link claims to reliable sources.
 ```
 
-Use a unique permalink and navigation key, and choose an unused numeric navigation order. The `topics` field is an optional YAML list; when present, its entries appear on the article, in the home and Explore lists, and in the Tags directory. Tag routes are generated from those values. Follow `AGENTS.md` to review page metadata, links, and build output.
+Use a unique permalink and navigation key, and choose an unused numeric navigation order. Article Markdown files in `content/pages/` are automatically listed on Home and Explore (the home and About pages are excluded), ordered by their front matter date. The `topics` field is an optional YAML list; when present, its entries appear on the article, in the home and Explore lists, and in the Tags directory. Tag routes are generated from those values. Follow `AGENTS.md` to review page metadata, links, and build output.
 
 The home route is defined by `content/pages/home.md` and must keep `title: Getting started`, `permalink: /`, and the navigation order `0`. The static Explore, Tags, and About route metadata is in `content/pages/explore.njk`, `content/pages/tags.njk`, and `content/pages/about.md`.
 

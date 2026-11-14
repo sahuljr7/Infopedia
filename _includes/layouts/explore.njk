@@ -7,20 +7,40 @@ layout: layouts/base.njk
     <p>Browse all company profiles and explainers, or narrow the list by topic.</p>
   </header>
   <section class="article-feed" aria-label="All articles">
-    {% for article in collections.menuItems %}
-      {% if article.data.topics %}
+    {% for article in articles %}
       <article id="article-{{ article.data.title | slug }}" class="feed-item">
         <time class="feed-item__date" datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
         <div class="feed-item__body">
           <h2><a href="{{ article.url | url }}">{{ article.data.title }}</a></h2>
+          {% if article.data.topics %}
           <ul class="topic-tags" aria-label="Topics">
             {% for topic in article.data.topics %}<li><a href="/tags/{{ topic | slug }}/">{{ topic }}</a></li>{% endfor %}
           </ul>
+          {% endif %}
+          {% if article.data.description %}
           <p class="feed-item__description">{{ article.data.description }}</p>
+          {% endif %}
           <a class="feed-item__link" href="{{ article.url | url }}">Read more <span aria-hidden="true">→</span></a>
         </div>
       </article>
-      {% endif %}
     {% endfor %}
   </section>
+
+  {% if pagination.hrefs.length > 1 %}
+  <nav class="article-pagination" aria-label="Explore pages">
+    {% if pagination.href.previous %}
+    <a class="article-pagination__step" href="{{ pagination.href.previous | url }}">Previous</a>
+    {% endif %}
+    <ol class="article-pagination__pages">
+      {% for href in pagination.hrefs %}
+      <li>
+        <a href="{{ href | url }}"{% if loop.index0 == pagination.pageNumber %} class="is-current" aria-current="page"{% endif %} aria-label="Page {{ loop.index }}">{{ loop.index }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+    {% if pagination.href.next %}
+    <a class="article-pagination__step" href="{{ pagination.href.next | url }}">Next</a>
+    {% endif %}
+  </nav>
+  {% endif %}
 </div>

@@ -8,8 +8,7 @@ layout: layouts/base.njk
   </section>
 
   <section id="articles" class="article-feed" aria-label="Latest articles">
-    {% for article in collections.menuItems %}
-      {% if article.url != page.url and article.data.topics %}
+    {% for article in collections.articles %}
       <article id="article-{{ article.data.title | slug }}" class="feed-item">
         <time class="feed-item__date" datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
         <div class="feed-item__body">
@@ -19,11 +18,12 @@ layout: layouts/base.njk
             {% for topic in article.data.topics %}<li><a href="/tags/{{ topic | slug }}/">{{ topic }}</a></li>{% endfor %}
           </ul>
           {% endif %}
+          {% if article.data.description %}
           <p class="feed-item__description">{{ article.data.description }}</p>
+          {% endif %}
           <a class="feed-item__link" href="{{ article.url | url }}">Read more <span aria-hidden="true">→</span></a>
         </div>
       </article>
-      {% endif %}
     {% endfor %}
   </section>
 

@@ -1,11 +1,15 @@
 ---
 title: Explore
 date: 2026-11-14
-permalink: /explore/index.html
+permalink: "/explore/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 description: Browse all Infopedia company profiles and explainers.
 eleventyNavigation:
   key: Explore
   title: Explore
   order: 10
 layout: layouts/explore.njk
+pagination:
+  data: collections.articles
+  size: 3
+  alias: articles
 ---
