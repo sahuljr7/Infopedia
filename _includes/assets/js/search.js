@@ -39,10 +39,15 @@
       return;
     }
 
-    const results = searchIndex.search(normalizedQuery, {
+    const matchingResults = searchIndex.search(normalizedQuery, {
       bool: "OR",
       expand: true,
-    }).slice(0, 8);
+    });
+    const exactTitleResults = matchingResults.filter(function (result) {
+      const documentData = searchIndex.documentStore.getDoc(result.ref);
+      return documentData && documentData.title.trim().toLowerCase() === normalizedQuery.toLowerCase();
+    });
+    const results = (exactTitleResults.length ? exactTitleResults : matchingResults).slice(0, 8);
 
     if (!results.length) {
       searchStatus.textContent = "No results for “" + normalizedQuery + "”.";

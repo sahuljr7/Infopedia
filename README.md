@@ -74,7 +74,7 @@ The home route is defined by `content/pages/home.md` and must keep `title: Getti
 
 ## Search implementation
 
-Eleventy generates `/search-index.json` from Markdown files under `content/pages/`. The `filters/searchFilter.js` filter indexes each page's title, description, and text content with Elasticlunr. The browser code in `_includes/assets/js/search.js` loads that index and renders matching pages in the header search dialog. Keep the generated index and its source filter in sync when changing searchable content or behavior.
+Eleventy generates `/search-index.json` from Markdown files under `content/pages/`. The `filters/searchFilter.js` filter indexes each page's title, description, and text content with Elasticlunr. The browser code in `_includes/assets/js/search.js` loads that index and renders matching pages in the header search dialog. Exact title matches take precedence over pages that only mention the query in their body; other queries search titles, descriptions, and article text. Keep the generated index and its source filter in sync when changing searchable content or behavior.
 
 ## Deployment
 
