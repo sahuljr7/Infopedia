@@ -14,8 +14,17 @@
   }
 
   body.dark {
-    background: #111827;
-    color: #f3f4f6;
+    --dark-background: #111827;
+    --dark-surface: #1f2937;
+    --dark-surface-raised: #030712;
+    --dark-text-primary: #f9fafb;
+    --dark-text-body: #d1d5db;
+    --dark-text-muted: #9ca3af;
+    --dark-border: #374151;
+    --dark-accent: #6ee7b7;
+    --dark-accent-hover: #a7f3d0;
+    background: var(--dark-background);
+    color: var(--dark-text-primary);
   }
 
   a {
@@ -60,6 +69,66 @@
     color: #f3f4f6;
   }
 
+  /* Typography 0.3 sets its own gray body color, so body.dark alone cannot
+     provide enough contrast for prose paragraphs, lists, and tables. */
+  body.dark .prose {
+    color: var(--dark-text-body);
+  }
+
+  body.dark .prose [class~="lead"],
+  body.dark .prose ol > li::before,
+  body.dark .prose figure figcaption {
+    color: var(--dark-text-muted);
+  }
+
+  body.dark .prose a {
+    color: var(--dark-accent);
+  }
+
+  body.dark .prose a:hover {
+    color: var(--dark-accent-hover);
+  }
+
+  body.dark .prose blockquote {
+    color: var(--dark-text-body);
+    border-left-color: var(--dark-border);
+    background-color: var(--dark-surface);
+  }
+
+  body.dark .prose ul > li::before {
+    background-color: var(--dark-text-muted);
+  }
+
+  body.dark .prose hr {
+    border-color: var(--dark-border);
+  }
+
+  body.dark .prose code,
+  body.dark .prose a code {
+    color: var(--dark-text-primary);
+    background-color: var(--dark-surface);
+  }
+
+  body.dark .prose pre {
+    color: var(--dark-text-body);
+    background-color: var(--dark-surface-raised);
+    border: 1px solid var(--dark-border);
+  }
+
+  body.dark .prose pre code {
+    color: inherit;
+    background-color: transparent;
+  }
+
+  body.dark .prose thead {
+    color: var(--dark-text-primary);
+    border-bottom-color: var(--dark-border);
+  }
+
+  body.dark .prose tbody tr {
+    border-bottom-color: var(--dark-border);
+  }
+
   .prose h2,
   .prose h3,
   .prose h4,
@@ -100,10 +169,31 @@
 
   body.dark blockquote {
     @apply border-green-400 bg-gray-800;
+    color: var(--dark-text-body);
   }
 
   input {
     @apply text-gray-900;
+  }
+
+  body.dark input,
+  body.dark textarea,
+  body.dark select {
+    color: var(--dark-text-primary);
+    background-color: var(--dark-surface);
+    border-color: #4b5563;
+  }
+
+  body.dark input::placeholder,
+  body.dark textarea::placeholder {
+    color: var(--dark-text-muted);
+  }
+
+  body.dark input:focus,
+  body.dark textarea:focus,
+  body.dark select:focus {
+    border-color: var(--dark-accent);
+    outline-color: var(--dark-accent);
   }
 }
 
@@ -592,6 +682,26 @@
     @apply bg-gray-800;
   }
 
+  body.dark .site-nav a:hover,
+  body.dark .back-link:hover,
+  body.dark .edit-link:hover,
+  body.dark .feed-item__body h2 a:hover,
+  body.dark .feed-item__link:hover,
+  body.dark .topic-index__links a:hover,
+  body.dark .page-navigation a:hover,
+  body.dark .site-footer__inner nav a:hover {
+    color: var(--dark-accent-hover);
+  }
+
+  body.dark .tag-directory__arrow,
+  body.dark .tag-directory__item:hover .tag-directory__name {
+    color: var(--dark-accent);
+  }
+
+  body.dark .tag-directory__item:hover .tag-directory__arrow {
+    color: var(--dark-accent-hover);
+  }
+
   body.dark .home-hero,
   body.dark .feed-item,
   body.dark .topic-index,
@@ -605,6 +715,8 @@
   body.dark .feed-item__date,
   body.dark .feed-item__description,
   body.dark .article-header__meta,
+  body.dark .page-navigation a span:first-child,
+  body.dark .table-of-contents,
   body.dark .site-footer__inner,
   body.dark .site-footer__inner nav a {
     @apply text-gray-400;
